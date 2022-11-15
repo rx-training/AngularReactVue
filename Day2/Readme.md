@@ -14,5 +14,10 @@ React useState hook
 
 const (name,setName)=useState("Varsha")
 
-existing object value remains same
+How to maintain existing state of the object
+
+ const [form,setForm]=useState({FirstName:"",LastName:""});
+ setForm(f=>({...f,FirstName:e.target.value}))
+ setForm(f=>({...f,LastName:e.target.value}))
+
 
