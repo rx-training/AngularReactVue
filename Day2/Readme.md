@@ -4,6 +4,9 @@ Angular propery binding []
 Vue Propery binding v-bind:
 React Property Binding {}
 
+ngStyle
+ngClass
+
 Two Way Data Binding
 
 Angular ([ngModel]) import forms modules in app.module.ts
