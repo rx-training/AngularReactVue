@@ -20,7 +20,6 @@ return(
         FirstName <input type="text" onChange={(e)=>setForm(f=>({...f,FirstName:e.target.value}))} />
         LastName <input type="text" onChange={(e)=>setForm(f=>({...f,LastName:e.target.value}))}/>
         <button onClick={(e) => {e.preventDefault();
-   
         setList([
           ...userList,
           { FirstName: form.FirstName, LastName: form.LastName}
