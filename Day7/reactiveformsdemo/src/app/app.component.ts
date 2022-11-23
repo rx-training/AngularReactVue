@@ -64,15 +64,5 @@ export class AppComponent {
   deletehobby(i: number) {
     this.getHobbies.removeAt(i);
   }
-  statusinfo(i:string)
-  {
-    if(i=="true")
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
-  }
+
 }
