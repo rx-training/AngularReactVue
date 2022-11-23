@@ -2,15 +2,15 @@
   <div formGroupName="Name">
     FirstName <input type="text" formControlName="FirstName" />
 
-    <!-- <div  *ngIf="FName?.invalid  && FName?.touched">
-          hello
+    <div  *ngIf="FName?.invalid  && FName?.touched">
+
             <div *ngIf="FName?.errors?.['required']">
                 "Value Can not be empty"
             </div>
             <div *ngIf="FName?.errors?.['minlength']">
              Minimum character required is 3
           </div>
-        </div> -->
+        </div>
     LastName <input type="text" formControlName="LastName" />
   </div>
   <div formGroupName="Address">
@@ -43,7 +43,10 @@
       {{ hobbies[i].name }}
     </ng-container>
   </div>
+  <h1>Profile form data</h1>
+  {{profileform.value|json}}
   <button [disabled]="!profileform.valid" (click)="submitdata()">
     Submit Data
   </button>
 </form>
+

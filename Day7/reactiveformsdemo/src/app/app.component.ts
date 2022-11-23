@@ -48,9 +48,9 @@ export class AppComponent {
   submitdata() {
     console.log(this.profileform);
   }
-  // get FName() {
-  //   return this.profileform?.controls.Name.get("FirstName");
-  // }
+  get FName() {
+    return this.profileform.get("Name")?.get("FirstName");
+  }
   get getHobbies() {
 
     return this.profileform?.get("Hobbies") as FormArray;
