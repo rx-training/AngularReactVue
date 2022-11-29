@@ -15,6 +15,12 @@ export class AppComponent {
   title = 'routingdemo';
   details(item:any)
   {
-    this.router.navigate(['/detail', item.ProductID]);
+    // this.router.navigate(["/detail", item.ProductID], {
+    //   queryParams: {
+    //     lastVisited: "last-visited-id-here-...",
+    //   },
+    // });
+
+    this.router.navigate(['/detail', item.ProductID] ,{queryParams: { name: item.Name }});
   }
 }
