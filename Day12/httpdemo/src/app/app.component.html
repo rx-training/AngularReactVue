@@ -8,6 +8,7 @@ Female <input type="radio" value="female" formControlName="gender"/>
 <option value="active">active</option>
 <option value="inactive">inactive</option>
 </select>
+{{userForm.value|json}}
 <button (click)="submitinfo()" >SubmitUser</button>
 <button (click)="editinfo()">Edit</button>
 </div>
@@ -15,3 +16,7 @@ Female <input type="radio" value="female" formControlName="gender"/>
   {{i.id}} {{i.name}} {{i.gender}} {{i.status}}
 <button (click)="editnfo(i)">Edit</button>
 </div>
+<input type="text" [(ngModel)]="num1"/>
+{{num1}}
+
+

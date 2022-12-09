@@ -1,7 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
 import { User } from './Models/User';
 import { UserServiceService } from './user-service.service';
-import {FormGroup,FormControl} from '@angular/forms';
+import {FormGroup,FormControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +10,18 @@ import {FormGroup,FormControl} from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'httpdemo';
+  num1:number=90;
   userList:Array<User>=[];
   userForm!:FormGroup
   ngOnInit()
   {
-    this.userForm=new FormGroup(
+    this.userForm=this.fb.group(
       {
-        id:new FormControl(),
-        name:new FormControl(),
-        email:new FormControl(),
-        gender:new FormControl(),
-        status:new FormControl()
+        id:[''],
+        name:['',Validators.required],
+        email:[''],
+        gender:[''],
+        status:['']
       }
     );
       this.getlist();
@@ -29,13 +30,14 @@ export class AppComponent implements OnInit {
   {
     this.userservice.getUser().subscribe((users:Array<User>)=>{this.userList=users})
   }
-  constructor(private userservice:UserServiceService)
+  constructor(private userservice:UserServiceService,private fb:FormBuilder)
   {
 
   }
   submitinfo()
   {
-    this.userservice.postUser(this.userForm.value).subscribe((data=>console.log(data)));
+  //  console.log(this.userForm.value);
+  this.userservice.postUser(this.userForm.value).subscribe((data=>console.log(data)));
     this.getlist();
   }
   editnfo(user:User)
